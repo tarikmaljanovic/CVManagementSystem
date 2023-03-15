@@ -2,8 +2,10 @@
   require "vendor/autoload.php";
 
   Flight::route('/', function() {
-    echo "Hellp";
+    echo "hello";
   });
+
+  
 
   Flight::start();
 ?>
