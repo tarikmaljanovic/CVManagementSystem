@@ -69,6 +69,12 @@
 .container .cv-section {
   flex-wrap: wrap;
 }
+.container .cv-section .cv .notification {
+  height: 200px;
+  background-color: #FFF;
+  border: #939393 solid 0.5px;
+  padding: 20px;
+}
 .container .sidebar {
   position: absolute;
   top: 0;

@@ -71,6 +71,14 @@
   }
   .cv-section {
     flex-wrap: wrap;
+    .cv {
+      .notification {
+        height: 200px;
+        background-color: #FFF;
+        border: #939393 solid 0.5px;
+        padding: 20px;
+      }
+    }
   }
   .sidebar {
     position: absolute;
