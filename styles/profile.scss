@@ -3,11 +3,14 @@
 @import './bulma/sass/utilities/mixins.sass';
 
 .container {
+  position: relative;
+  height: 100vh;
   .hero {
     .hero-body {
       display: flex;
       flex-direction: column;
       background-color: #8e93ff;
+      position: relative;
       .upper {
         width: 100%;
         height: 100%;
@@ -66,13 +69,41 @@
       }
     }
   }
-}
-.sidebar {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  
-  background-color: rgb(255, 255, 255);
-  box-shadow: 1px 1px 20px #000;
-  width: 50%;
+  .sidebar {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 1px 1px 10px #000;
+    width: 60%;
+    display: none;
+    transition: 0.2s ease;
+    padding: 10px;
+    .rows {
+      .row {
+        font-family: 'Montserrat';
+        font-size: 15px;
+        padding: 10px;
+        cursor: pointer;
+        a {
+          text-decoration: none;
+          color: #8e93ff;
+        }
+        h1, h2 {
+          color: #8e93ff;
+        }
+      }
+      .row:active {
+        background-color: #dfdfdf;
+      }
+    }
+    @include mobile {
+      display: block;
+    }
+
+  }
+  .hidden {
+    transform: translate(-500px, 0px);
+    transition: 0.2s ease;
+  }
 }

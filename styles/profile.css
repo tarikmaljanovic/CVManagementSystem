@@ -1,9 +1,14 @@
 @import "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css";
 @import 'https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap';
+.container {
+  position: relative;
+  height: 100vh;
+}
 .container .hero .hero-body {
   display: flex;
   flex-direction: column;
   background-color: #8e93ff;
+  position: relative;
 }
 .container .hero .hero-body .upper {
   width: 100%;
@@ -61,12 +66,39 @@
     align-items: center;
   }
 }
-
-.sidebar {
+.container .sidebar {
   position: absolute;
   top: 0;
   bottom: 0;
   background-color: rgb(255, 255, 255);
-  box-shadow: 1px 1px 20px #000;
-  width: 50%;
+  box-shadow: 1px 1px 10px #000;
+  width: 60%;
+  display: none;
+  transition: 0.2s ease;
+  padding: 10px;
+}
+.container .sidebar .rows .row {
+  font-family: "Montserrat";
+  font-size: 15px;
+  padding: 10px;
+  cursor: pointer;
+}
+.container .sidebar .rows .row a {
+  text-decoration: none;
+  color: #8e93ff;
+}
+.container .sidebar .rows .row h1, .container .sidebar .rows .row h2 {
+  color: #8e93ff;
+}
+.container .sidebar .rows .row:active {
+  background-color: #dfdfdf;
+}
+@media screen and (max-width: 768px) {
+  .container .sidebar {
+    display: block;
+  }
+}
+.container .hidden {
+  transform: translate(-500px, 0px);
+  transition: 0.2s ease;
 }/*# sourceMappingURL=profile.css.map */
