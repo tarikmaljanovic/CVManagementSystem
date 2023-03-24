@@ -45,6 +45,22 @@
       .button:hover {
         background-color: #787ffe;
       }
+      .login-switch {
+        background-color: white;
+        border: #8e93ff solid 0.5px;
+        color: #8e93ff;
+      }
+      .signup-switch {
+        background-color: white;
+        border: #8e93ff solid 0.5px;
+        color: #8e93ff;
+      }
+      .login-switch:hover {
+        color: white;
+      }
+      .signup-switch:hover {
+        color: white;
+      }
     }
   }
   .hidden {

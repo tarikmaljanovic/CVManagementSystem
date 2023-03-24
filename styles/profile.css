@@ -69,16 +69,46 @@
 .container .cv-section {
   flex-wrap: wrap;
 }
+.container .cv-section .cv {
+  padding: 10px;
+}
 .container .cv-section .cv .notification {
   height: 200px;
   background-color: #FFF;
   border: #939393 solid 0.5px;
   padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.5s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.container .cv-section .cv .notification i {
+  color: gray;
+  font-size: 50px;
+}
+.container .cv-section .cv .notification .cv-title {
+  font-size: large;
+  color: gray;
+  font-family: "Montserrat";
+  font-weight: 600;
+  padding: 10px;
+}
+.container .cv-section .cv .notification .creation-date {
+  font-size: medium;
+  color: grey;
+  font-family: "Montserrat";
+}
+.container .cv-section .cv .notification:hover {
+  opacity: 0.6;
 }
 .container .sidebar {
   position: absolute;
   top: 0;
-  bottom: 0;
   background-color: rgb(255, 255, 255);
   box-shadow: 1px 1px 10px #000;
   width: 60%;

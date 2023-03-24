@@ -9,6 +9,7 @@
     <script defer src="./js_files/jquery-3.6.4.min.js"></script>
     <script defer src="./js_files/jquery-3.6.4.js"></script>
     <script defer src="./js_files/profile.js"></script>
+    <script src="https://kit.fontawesome.com/b3917926bf.js" crossorigin="anonymous"></script>
 </head>
 <body>
   <div class="container is-fluid p-0">
@@ -24,14 +25,17 @@
             <div class="dropdown-menu" id="dropdown-menu" role="menu">
               <div class="dropdown-content">
                 <a href="#" class="dropdown-item">
+                  <i class="fa-solid fa-moon"></i>
                   Dark Mode
                 </a>
                 <hr class="dropdown-divider">
                 <a href="#" class="dropdown-item">
+                  <i class="fa-solid fa-pen-to-square"></i>
                   Edit Profile
                 </a>
                 <hr class="dropdown-divider">
                 <a href="#" class="dropdown-item">
+                  <i class="fa-solid fa-right-from-bracket"></i>
                   Log out
                 </a>
               </div>
@@ -59,20 +63,17 @@
       </div>
     </section>
     <div class="columns cv-section m-3">
-      <div class="column is-4 cv">
-        <div class="notification is-primary"></div>
+      <div class="column is-3 cv">
+        <div class="notification">
+          <p class="cv-title">CV Name</p>
+          <p class="creation-date">Creation Date</p>
+        </div>
+        
       </div>
-      <div class="column is-4 cv">
-        <div class="notification is-primary"></div>
-      </div>
-      <div class="column is-4 cv">
-        <div class="notification is-primary"></div>
-      </div>
-      <div class="column is-4 cv">
-        <div class="notification is-primary"></div>
-      </div>
-      <div class="column is-4 cv">
-        <div class="notification is-primary"></div>
+      <div class="column is-3 cv cv-add">
+        <div class="notification">
+          <i class="fa-solid fa-plus"></i>
+        </div>
       </div>
     </div>
     <div class="sidebar hidden">
@@ -84,22 +85,27 @@
           <hr class="dropdown-divider">
           <div class="row">
             <a href="#" target="_self">
+              <i class="fa-solid fa-moon"></i>
               Dark Mode
             </a>
           </div>
           <hr class="dropdown-divider">
           <div class="row">
             <a href="#" target="_self">
+              <i class="fa-solid fa-pen-to-square"></i>
               Edit Profile
             </a>
           </div>
           <hr class="dropdown-divider">
           <div class="row">
-            <a href="./login.html" target="_self">Log out</a>
+            <a href="./login.html" target="_self">
+              <i class="fa-solid fa-right-from-bracket"></i>
+              Log out
+            </a>
           </div>
-          <hr class="dropdown-divider">
         </div>
     </div>
+
   </div>
 </body>
 </html>
