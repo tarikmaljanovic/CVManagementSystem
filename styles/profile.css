@@ -1,7 +1,6 @@
 @import "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css";
 @import 'https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap';
 .container {
-  position: relative;
   height: 100vh;
 }
 .container .hero .hero-body {
@@ -106,6 +105,21 @@
 .container .cv-section .cv .notification:hover {
   opacity: 0.6;
 }
+.container .cv-section .cv .buttons {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.container .cv-section .cv .buttons .button {
+  border: none;
+  background-color: #8e93ff;
+  color: white;
+  transition: 0.3s ease;
+}
+.container .cv-section .cv .buttons .button:hover {
+  background-color: #787ffe;
+  transition: 0.3s ease;
+}
 .container .sidebar {
   position: absolute;
   top: 0;
@@ -140,4 +154,52 @@
 .container .hidden {
   transform: translate(-500px, 0px);
   transition: 0.2s ease;
+}
+.container .popup {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container .popup .background {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgb(176, 176, 176);
+  opacity: 0.6;
+}
+.container .popup .box {
+  position: relative;
+  z-index: 100;
+}
+.container .popup .box .confirmation-label {
+  font-family: "Montserrat";
+  padding: 20px;
+}
+.container .popup .box .buttons {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.container .popup .box .field .label {
+  font-family: "Montserrat";
+}
+.container .popup .box .field .control .input {
+  font-family: "Montserrat";
+}
+.container .popup .box .button {
+  font-family: "Montserrat";
+  background-color: #8e93ff;
+  color: white;
+  border: none;
+  transition: 0.3s ease;
+}
+.container .popup .box .button:hover {
+  background-color: #787ffe;
 }/*# sourceMappingURL=profile.css.map */

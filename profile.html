@@ -13,6 +13,9 @@
 </head>
 <body>
   <div class="container is-fluid p-0">
+
+    <!--The header of the profile page which contains user informtion and additional options-->
+
     <section class="hero is-medium is-link">
       <div class="hero-body p-0">
         <div class="upper">
@@ -24,17 +27,17 @@
             </div>
             <div class="dropdown-menu" id="dropdown-menu" role="menu">
               <div class="dropdown-content">
-                <a href="#" class="dropdown-item">
+                <a href="#" class="dropdown-item dark-mode-btn">
                   <i class="fa-solid fa-moon"></i>
                   Dark Mode
                 </a>
                 <hr class="dropdown-divider">
-                <a href="#" class="dropdown-item">
+                <a href="#" class="dropdown-item edit-profile-btn">
                   <i class="fa-solid fa-pen-to-square"></i>
                   Edit Profile
                 </a>
                 <hr class="dropdown-divider">
-                <a href="#" class="dropdown-item">
+                <a href="#" class="dropdown-item log-out-btn">
                   <i class="fa-solid fa-right-from-bracket"></i>
                   Log out
                 </a>
@@ -62,13 +65,19 @@
         </div>
       </div>
     </section>
+
+    <!--The section of the profile page which contains the CVs and the add new CV option-->
+
     <div class="columns cv-section m-3">
       <div class="column is-3 cv">
         <div class="notification">
           <p class="cv-title">CV Name</p>
-          <p class="creation-date">Creation Date</p>
+          <p class="creation-date">01/01/2023</p>
         </div>
-        
+        <div class="buttons">
+          <button class="button is-rounded">Edit</button>
+          <button class="button is-rounded">Delete</button>
+        </div>
       </div>
       <div class="column is-3 cv cv-add">
         <div class="notification">
@@ -76,6 +85,9 @@
         </div>
       </div>
     </div>
+
+    <!--The sidebar for the mobile version-->
+
     <div class="sidebar hidden">
         <div class="rows">
           <div class="row profile-sidebar-info">
@@ -83,27 +95,87 @@
             <h2 class="email">E-mail</h2>
           </div>
           <hr class="dropdown-divider">
-          <div class="row">
+          <div class="row dark-mode-btn">
             <a href="#" target="_self">
               <i class="fa-solid fa-moon"></i>
               Dark Mode
             </a>
           </div>
           <hr class="dropdown-divider">
-          <div class="row">
+          <div class="row edit-profile-btn">
             <a href="#" target="_self">
               <i class="fa-solid fa-pen-to-square"></i>
               Edit Profile
             </a>
           </div>
           <hr class="dropdown-divider">
-          <div class="row">
-            <a href="./login.html" target="_self">
+          <div class="row log-out-btn">
+            <a href="#" target="_self">
               <i class="fa-solid fa-right-from-bracket"></i>
               Log out
             </a>
           </div>
         </div>
+    </div>
+
+    <!--The popup for editing the user profile-->
+
+    <div class="popup edit-profile is-hidden">
+      <div class="background"></div>
+      <form class="box">
+        <i class="fa-solid fa-xmark exit"></i>
+        <div class="field">
+          <label class="label">First Name</label>
+          <div class="control">
+            <input class="input" type="text" placeholder="First Name">
+          </div>
+        </div>
+        <div class="field">
+          <label class="label">Last Name</label>
+          <div class="control">
+            <input class="input" type="text" placeholder="Last Name">
+          </div>
+        </div>
+        <div class="field">
+          <label class="label">Email</label>
+          <div class="control">
+            <input class="input" type="text" placeholder="Email">
+          </div>
+        </div>
+        <div class="field">
+          <label class="label">Account Created</label>
+          <div class="control">
+            <input class="input" type="text" placeholder="01/01/2023" disabled>
+          </div>
+        </div>
+        <button class="button form-button is-rounded">Save Changes</button>
+      </form>
+    </div>
+
+    <!--The popup for creating a new CV-->
+
+    <div class="popup create-cv is-hidden">
+
+    </div>
+
+    <!--The popup for editing a CV-->
+
+    <div class="popup edit-cv is-hidden">
+
+    </div>
+
+    <!--The popup for deleting a cv-->
+
+    <div class="popup confirmation is-hidden">
+      <div class="background"></div>
+      <form class="box">
+        <h2 class="confirmation-label">Are you sure you want to make this change?</h2>
+      
+        <div class="buttons">
+          <button class="button is-rounded">Yes</button>
+          <button class="button is-rounded">No</button>
+        </div>
+      </form>
     </div>
 
   </div>

@@ -16,5 +16,21 @@ $(document).ready(function() {
         $(".dropdown").removeClass("is-active");
 
         return false;
+    });
+
+    $(".edit-profile-btn").click(function() {
+        $(".edit-profile").removeClass("is-hidden");
+        $(".dropdown ").removeClass("is-active");
+        $(".sidebar").addClass("hidden");
+
+        return false;
+    });
+
+    $(".exit").click(function() {
+        $(".popup").addClass("is-hidden");
+        
+        return false;
     })
+
+
 })

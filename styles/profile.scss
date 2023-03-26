@@ -3,8 +3,8 @@
 @import './bulma/sass/utilities/mixins.sass';
 
 .container {
-  position: relative;
   height: 100vh;
+  //HERO START
   .hero {
     .hero-body {
       display: flex;
@@ -69,6 +69,8 @@
       }
     }
   }
+  //HERO END
+  //CV-SECTION START
   .cv-section {
     flex-wrap: wrap;
     .cv {
@@ -107,8 +109,25 @@
       .notification:hover {
         opacity: 0.6;
       }
+      .buttons {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        .button {
+          border: none;
+          background-color: #8e93ff;
+          color: white;
+          transition: 0.3s ease;
+        }
+        .button:hover {
+          background-color: #787ffe;
+          transition: 0.3s ease;
+        }
+      }
     }
   }
+  //CV-SECTION END
+  //SIDEBAR START
   .sidebar {
     position: absolute;
     top: 0;
@@ -145,4 +164,63 @@
     transform: translate(-500px, 0px);
     transition: 0.2s ease;
   }
+  //SIDEBAR END
+  //POPUP START
+  .popup {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .background {
+      position:fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+
+      background-color: rgb(176, 176, 176);
+      opacity: 0.6;
+    }
+    .box {
+      position: relative;
+      z-index: 100;
+      .confirmation-label {
+        font-family: 'Montserrat';
+        padding: 20px;
+      }
+      .buttons {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+      }
+      .field {
+        .label {
+          font-family: 'Montserrat';
+        }
+        .control {
+          .input {
+            font-family: 'Montserrat';
+          }
+        }
+      }
+      .button {
+        font-family: 'Montserrat';
+        background-color: #8e93ff;
+        color: white;
+        border: none;
+        transition: 0.3s ease;
+      }
+      .button:hover {
+        background-color: #787ffe;
+      }
+    }
+  }
+  
+
 }
