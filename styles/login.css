@@ -38,20 +38,20 @@
 .container .box .buttons .button:hover {
   background-color: #787ffe;
 }
-.container .box .buttons .login-switch {
+.container .box .buttons #login-switch {
   background-color: white;
   border: #8e93ff solid 0.5px;
   color: #8e93ff;
 }
-.container .box .buttons .signup-switch {
+.container .box .buttons #signup-switch {
   background-color: white;
   border: #8e93ff solid 0.5px;
   color: #8e93ff;
 }
-.container .box .buttons .login-switch:hover {
+.container .box .buttons #login-switch:hover {
   color: white;
 }
-.container .box .buttons .signup-switch:hover {
+.container .box .buttons #signup-switch:hover {
   color: white;
 }
 .container .hidden {
