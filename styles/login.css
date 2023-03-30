@@ -50,9 +50,11 @@
 }
 .container .box .buttons #login-switch:hover {
   color: white;
+  background-color: #787ffe;
 }
 .container .box .buttons #signup-switch:hover {
   color: white;
+  background-color: #787ffe;
 }
 .container .hidden {
   display: none;
