@@ -200,6 +200,7 @@
   background-color: #8e93ff;
   color: white;
   border: none;
+  width: 60px;
   transition: 0.3s ease;
 }
 .container .popup .box .button:hover {

@@ -30,7 +30,25 @@ $(document).ready(function() {
         $(".popup").addClass("is-hidden");
         
         return false;
-    })
+    });
+
+    $("#delete").click(function() {
+        $(".confirmation").removeClass("is-hidden");
+        
+        return false;
+    });
+
+    $("#stop").click(function() {
+        $(".confirmation").addClass("is-hidden");
+
+        return false;
+    });
+
+    $("#confirm").click(function() {
+        $(".confirmation").addClass("is-hidden");
+
+        return false;
+    });
 
 
-})
+});
