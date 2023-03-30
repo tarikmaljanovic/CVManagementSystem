@@ -23,6 +23,9 @@
   font-family: "Montserrat";
   font-weight: 400;
 }
+.container .box .field .control .input {
+  font-family: "Montserrat";
+}
 .container .box .buttons {
   display: flex;
   justify-content: space-around;
