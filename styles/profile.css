@@ -115,7 +115,7 @@
   background-color: #8e93ff;
   color: white;
   transition: 0.3s ease;
-  width: 80px;
+  width: auto;
   font-family: "Montserrat";
 }
 .container .cv-section .cv .buttons .button:hover {
@@ -200,7 +200,7 @@
   background-color: #8e93ff;
   color: white;
   border: none;
-  width: 60px;
+  width: auto;
   transition: 0.3s ease;
 }
 .container .popup .box .button:hover {
