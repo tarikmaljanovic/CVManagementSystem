@@ -48,6 +48,9 @@
     public function add($entity){
       $query = "INSERT INTO " . $this->table_name . " (";
       foreach ($entity as $column => $value) {
+        if($column == "user_id") {
+          continue;
+        }
         $query .= $column.", ";
       }
       $query = substr($query, 0, -2);
