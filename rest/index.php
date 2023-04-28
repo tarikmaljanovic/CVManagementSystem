@@ -7,6 +7,8 @@
   require 'services/ExperienceService.php';
   require 'services/SkillService.php';
   require 'services/UserSkillService.php';
+  require 'services/EducationService.php';
+  
 
   header('Access-Control-Allow-Origin: *');
   header('Access-Control-Allow-Methods: PUT, GET, POST, DELETE, OPTIONS, PATCH');
@@ -16,6 +18,7 @@
   Flight::register('cvService', 'CVService');
   Flight::register('educationalInstitutionService', 'EducationalInstitutionService');
   Flight::register('experienceService', 'ExperienceService');
+  Flight::register('educationService', 'EducationService');
   Flight::register('skillService', 'SkillService');
   Flight::register('userSkillService', 'UserSkillService');
 
@@ -27,6 +30,7 @@
   require './routes/SkillRoutes.php';
   require './routes/UserRoutes.php';
   require './routes/UserSkillRoutes.php';
+  require './routes/EducationRoutes.php';
 
 
   Flight::start();
