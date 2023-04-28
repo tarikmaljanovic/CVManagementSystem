@@ -11,6 +11,10 @@ Flight::route("GET /cvs", function(){
  Flight::route("GET /cvs/@id", function($id){
     Flight::json(Flight::cvService()->get_by_id($id));
  });
+
+ Flight::route("GET /getCvsByUser/@id", function($id){
+   Flight::json(Flight::cvService()->getCvsByUser($id));
+});
  
  Flight::route("DELETE /cvs/@id", function($id){
     Flight::cvService()->delete($id);
