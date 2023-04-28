@@ -25,7 +25,7 @@
 
   require './routes/CompanyRoutes.php';
   require './routes/CVRoutes.php';
-  require './routes/CVRoutes.php';
+  require './routes/ExperienceRoutes.php';
   require './routes/EducationalIntitutionRoutes.php';
   require './routes/SkillRoutes.php';
   require './routes/UserRoutes.php';

@@ -63,5 +63,12 @@
       $entity['id'] = $this->conn->lastInsertId();
       return $entity;
     }
+
+    //Query
+    public function query($query){
+      $stmt = $this->conn->prepare($query);
+      $stmt->execute();
+      return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
   }
 ?>

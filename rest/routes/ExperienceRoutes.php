@@ -11,6 +11,10 @@ Flight::route("GET /experiences", function(){
  Flight::route("GET /experiences/@id", function($id){
     Flight::json(Flight::experienceService()->get_by_id($id));
  });
+
+ Flight::route("GET /getExperienceByCv/@id", function($id){
+   Flight::json(Flight::experienceService()->getExperienceByCv($id));
+ });
  
  Flight::route("DELETE /experiences/@id", function($id){
     Flight::experienceService()->delete($id);

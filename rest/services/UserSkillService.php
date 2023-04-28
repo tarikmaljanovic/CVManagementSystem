@@ -5,6 +5,10 @@
   class UserSkillService extends BaseService{
     public function __construct(){
         parent::__construct(new UserSkillsDao);
-    } 
+    }
+    
+    public function getSkillsByCv($id) {
+      return $this->dao->getSkillsByCv($id);
+    }
   }
 ?>

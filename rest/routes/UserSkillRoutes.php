@@ -7,8 +7,12 @@ Flight::route("GET /userSkills", function(){
  Flight::route("GET /userSkill_by_id", function(){
     Flight::json(Flight::userSkillService()->get_by_id(Flight::request()->query['id']));
  });
+
+ Flight::route("GET /getSkillsByCv/@id", function($id){
+   Flight::json(Flight::userSkillService()->getSkillsByCv($id));
+});
  
- Flight::route("GET /userSkills/@id", function($id){
+ Flight::route("GET /userSkills", function($id){
     Flight::json(Flight::userSkillService()->get_by_id($id));
  });
  

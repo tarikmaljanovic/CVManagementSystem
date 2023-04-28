@@ -6,5 +6,9 @@
     public function __construct(){
         parent::__construct(new EducationsDao);
     } 
+
+    public function getEducationByCv($id) {
+      return $this->dao->getEducationByCv($id);
+    }
   }
 ?>

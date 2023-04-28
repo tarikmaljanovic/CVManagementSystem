@@ -5,6 +5,10 @@
   class ExperienceService extends BaseService{
     public function __construct(){
         parent::__construct(new ExperiencesDao);
-    } 
+    }
+
+    public function getExperienceByCv($id) {
+      return $this->dao->getExperienceByCv($id);
+    }
   }
 ?>

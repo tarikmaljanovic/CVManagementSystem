@@ -11,6 +11,10 @@ Flight::route("GET /educations", function(){
  Flight::route("GET /educations/@id", function($id){
     Flight::json(Flight::educationService()->get_by_id($id));
  });
+
+ Flight::route("GET /getEducationByCv/@id", function($id){
+   Flight::json(Flight::educationService()->getEducationByCv($id));
+ });
  
  Flight::route("DELETE /educations/@id", function($id){
     Flight::educationService()->delete($id);

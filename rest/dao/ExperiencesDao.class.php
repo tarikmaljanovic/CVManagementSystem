@@ -5,5 +5,10 @@
     public function __construct() {
       parent::__construct("experiences");
     }
+
+    public function getExperienceByCv($id) {
+      $result = $this->query("SELECT * FROM experiences WHERE cv_id = '$id'");
+      return $result;
+    }
   }
 ?>
