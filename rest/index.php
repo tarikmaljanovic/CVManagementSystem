@@ -1,29 +1,33 @@
 <?php
   require '../vendor/autoload.php';
   require 'services/UserService.php';
+  require 'services/CompanyService.php';
+  require 'services/CVService.php';
+  require 'services/EducationalInstitutionService.php';
+  require 'services/ExperienceService.php';
+  require 'services/SkillService.php';
+  require 'services/UserSkillService.php';
+
   header('Access-Control-Allow-Origin: *');
   header('Access-Control-Allow-Methods: PUT, GET, POST, DELETE, OPTIONS, PATCH');
 
-  Flight::register('user', 'UserService');
+  Flight::register('userService', 'UserService');
+  Flight::register('companyService', 'CompanyService');
+  Flight::register('cvService', 'CVService');
+  Flight::register('educationalInstitutionService', 'EducationalInstitutionService');
+  Flight::register('experienceService', 'ExperienceService');
+  Flight::register('skillService', 'SkillService');
+  Flight::register('userSkillService', 'UserSkillService');
 
-  Flight::route('/', function() {
-    require '../login.html';
-  });
 
-  Flight::route('GET /profile', function() {
-    require '../profile.html';
-  });
+  require './routes/CompanyRoutes.php';
+  require './routes/CVRoutes.php';
+  require './routes/CVRoutes.php';
+  require './routes/EducationalIntitutionRoutes.php';
+  require './routes/SkillRoutes.php';
+  require './routes/UserRoutes.php';
+  require './routes/UserSkillRoutes.php';
 
-  Flight::route("GET /users", function(){
-    Flight::json(Flight::user()->get_all());
- });
-
- Flight::route("POST /user", function(){
-  $request = Flight::request()->data->getData();
-  Flight::json(['message' => "User added successfully",
-                'data' => Flight::user()->add($request)
-               ]);
-});
 
   Flight::start();
 ?>
