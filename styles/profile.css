@@ -179,6 +179,13 @@
 .container .popup .box {
   position: relative;
   z-index: 100;
+  overflow: scroll;
+}
+@media screen and (min-width: 1024px) {
+  .container .popup .box {
+    max-width: 30vw;
+    max-height: 70vh;
+  }
 }
 .container .popup .box .confirmation-label {
   font-family: "Montserrat";
@@ -194,6 +201,7 @@
 }
 .container .popup .box .field .control .input {
   font-family: "Montserrat";
+  margin: 5px;
 }
 .container .popup .box .button {
   font-family: "Montserrat";

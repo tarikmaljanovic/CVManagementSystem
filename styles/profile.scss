@@ -192,6 +192,11 @@
     .box {
       position: relative;
       z-index: 100;
+      @include desktop {
+        max-width: 30vw;
+        max-height: 70vh;
+      }
+      overflow: scroll;
       .confirmation-label {
         font-family: 'Montserrat';
         padding: 20px;
@@ -208,6 +213,7 @@
         .control {
           .input {
             font-family: 'Montserrat';
+            margin: 5px;
           }
         }
       }
@@ -224,6 +230,9 @@
       }
     }
   }
-  
+  //CV CREATE AND EDIT FORM STYLE
+  .cv-style{
+    
+  }
 
 }

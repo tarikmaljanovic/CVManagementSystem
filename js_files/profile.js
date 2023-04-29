@@ -39,6 +39,19 @@ $(document).ready(function() {
         return false;
     });
 
+    //Edit CV
+    $("#edit-CV").click(function() {
+        $(".edit-cv").removeClass("is-hidden");
+        
+        return false;
+    });
+
+    //Create CV
+    $(".cv-add").click(function() {
+        $(".create-cv").removeClass("is-hidden");
+        
+        return false;
+    });
 
     //Confimration for eleting a CV
     $("#confirm-delete").click(function() {
