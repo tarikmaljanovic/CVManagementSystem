@@ -32,19 +32,22 @@ $(document).ready(function() {
         return false;
     });
 
-    $("#delete").click(function() {
+    //Delete CV
+    $("#delete-CV").click(function() {
         $(".confirmation").removeClass("is-hidden");
         
         return false;
     });
 
-    $("#stop").click(function() {
+
+    //Confimration for eleting a CV
+    $("#confirm-delete").click(function() {
         $(".confirmation").addClass("is-hidden");
 
         return false;
     });
 
-    $("#confirm").click(function() {
+    $("#stop-delete").click(function() {
         $(".confirmation").addClass("is-hidden");
 
         return false;

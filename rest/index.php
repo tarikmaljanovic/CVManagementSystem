@@ -22,7 +22,6 @@
   Flight::register('skillService', 'SkillService');
   Flight::register('userSkillService', 'UserSkillService');
 
-
   require './routes/CompanyRoutes.php';
   require './routes/CVRoutes.php';
   require './routes/ExperienceRoutes.php';

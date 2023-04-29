@@ -31,4 +31,12 @@ Flight::route("GET /users", function(){
                  ]);
  });
 
+ Flight::route("/", function() {
+   require '../login.html';
+ });
+
+ Flight::route("GET /profile", function() {
+   require '../profile.html';
+ });
+
 ?>

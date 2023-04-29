@@ -63,15 +63,15 @@
 
     <!--The section of the profile page which contains the CVs and the add new CV option-->
 
-    <div class="columns cv-section m-3">
+    <div class="columns cv-section m-3" id="1">
       <div class="column is-3 cv">
         <div class="notification">
           <p class="cv-title">CV Name</p>
           <p class="creation-date">01/01/2023</p>
         </div>
         <div class="buttons">
-          <button class="button is-rounded">Edit</button>
-          <button class="button is-rounded" id="delete">Delete</button>
+          <button class="button is-rounded" id="edit-CV">Edit</button>
+          <button class="button is-rounded" id="delete-CV">Delete</button>
         </div>
       </div>
       <div class="column is-3 cv cv-add">
@@ -110,24 +110,24 @@
 
     <div class="popup edit-profile is-hidden">
       <div class="background"></div>
-      <form class="box">
+      <form class="box edit-profile">
         <i class="fa-solid fa-xmark exit"></i>
         <div class="field">
           <label class="label">First Name</label>
           <div class="control">
-            <input class="input" type="text" placeholder="First Name">
+            <input class="input" type="text" placeholder="First Name" value="">
           </div>
         </div>
         <div class="field">
           <label class="label">Last Name</label>
           <div class="control">
-            <input class="input" type="text" placeholder="Last Name">
+            <input class="input" type="text" placeholder="Last Name" value="">
           </div>
         </div>
         <div class="field">
           <label class="label">Email</label>
           <div class="control">
-            <input class="input" type="text" placeholder="Email">
+            <input class="input" type="text" placeholder="Email" value="">
           </div>
         </div>
         <div class="field">
@@ -143,25 +143,23 @@
     <!--The popup for creating a new CV-->
 
     <div class="popup create-cv is-hidden">
-
+      
     </div>
 
     <!--The popup for editing a CV-->
 
     <div class="popup edit-cv is-hidden">
-
+      
     </div>
 
     <!--The popup for deleting a cv-->
-
     <div class="popup confirmation is-hidden">
       <div class="background"></div>
       <form class="box">
-        <h2 class="confirmation-label">Are you sure you want to make this change?</h2>
-      
+        <h2 class="confirmation-label">Are you sure you want to <strong>delete</strong> this CV?</h2>
         <div class="buttons">
-          <button class="button is-rounded" id="confirm">Yes</button>
-          <button class="button is-rounded" id="stop">No</button>
+          <button class="button is-rounded" id="confirm-delete">Yes</button>
+          <button class="button is-rounded" id="stop-delete">No</button>
         </div>
       </form>
     </div>
