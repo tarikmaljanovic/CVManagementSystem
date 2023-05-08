@@ -66,5 +66,18 @@ $(document).ready(function() {
         return false;
     });
 
+    //Adding another experience section
+    $("#add-experience-section").click(function() {
+         $(".exp-create").append('<label class="label">Experience</label><div class="control"><input class="input" type="text" placeholder="Position"><input class="input" type="number" placeholder="Start Date"> <input class="input" type="number" placeholder="End Date"><textarea class="input" placeholder="Description"></textarea></div>');
+
+         return false;
+    });
+
+    //Adding another education section
+    $("#add-education-section").click(function() {
+        $(".edu-create").append('<label class="label">Education</label><div class="control"><input class="input" type="text" placeholder="Degree"><input class="input" type="text" placeholder="Field of Study"><input class="input" type="number" placeholder="Start Date"><input class="input" type="number" placeholder="End Date"><textarea class="input" placeholder="Description"></textarea></div>');
+
+        return false;
+    });
 
 });

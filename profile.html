@@ -47,11 +47,6 @@
         </div>
         <div class="bottom">
           <div class="columns">
-            <div class="column is-2 profile-picture">
-              <figure class="image is-128x128 m-0">
-                <img class="is-rounded" src="https://bulma.io/images/placeholders/128x128.png">
-              </figure>
-            </div>
             <div class="column is-10 profile-info">
               <h1 class="full-name">Full Name</h1>
               <h2 class="email">E-mail</h2>
@@ -152,162 +147,77 @@
             <input class="input" type="text" placeholder="CV Name">
           </div>
         </div>
-          <div class="field experience">
+          <div class="field education edu-create">
             <label class="label">Education</label>
             <div class="control">
               <input class="input" type="text" placeholder="Degree">
               <input class="input" type="text" placeholder="Field of Study">
-              <input class="input" type="number" placeholder="Start Date">
-              <input class="input" type="number" placeholder="End Date">
+              <input class="input" type="number" min="1900" max="2100" placeholder="Start Date">
+              <input class="input" type="number" min="1900" max="2100" placeholder="End Date">
               <textarea class="input" placeholder="Description"></textarea>
             </div>
           </div>
-          <div class="field education">
+          <button class="button" id="add-education-section">Add another education section</button>
+          <div class="field experience exp-create">
             <label class="label">Experience</label>
             <div class="control">
               <input class="input" type="text" placeholder="Position">
-              <input class="input" type="number" placeholder="Start Date">
-              <input class="input" type="number" placeholder="End Date">
+              <input class="input" type="number" min="1900" max="2100" placeholder="Start Date">
+              <input class="input" type="number" min="1900" max="2100" placeholder="End Date">
               <textarea class="input" placeholder="Description"></textarea>
             </div>
           </div>
+          <button class="button" id="add-experience-section">Add another experience section</button>
           <div class="field skills">
             <label class="label">Skills</label>
             <div class="control">
               <input class="input" type="text" placeholder="HTML, CSS, JavaScript, ...">
             </div>
           </div>
+      </form>
+    </div>
+
+        <!--The popup for editing a new CV-->
+
+        <div class="popup edit-cv  is-hidden">
+          <div class="background"></div>
+          <form class="box">
+            <i class="fa-solid fa-xmark exit"></i>
+            <div class="field">
+              <label class="label">CV Name</label>
+              <div class="control">
+                <input class="input" type="text" placeholder="CV Name">
+              </div>
+            </div>
+              <div class="field experience">
+                <label class="label">Education</label>
+                <div class="control">
+                  <input class="input" type="text" placeholder="Degree">
+                  <input class="input" type="text" placeholder="Field of Study">
+                  <input class="input" type="number" placeholder="Start Date">
+                  <input class="input" type="number" placeholder="End Date">
+                  <textarea class="input" placeholder="Description"></textarea>
+                </div>
+              </div>
+              <div class="field education">
+                <label class="label">Experience</label>
+                <div class="control">
+                  <input class="input" type="text" placeholder="Position">
+                  <input class="input" type="number" placeholder="Start Date">
+                  <input class="input" type="number" placeholder="End Date">
+                  <textarea class="input" placeholder="Description"></textarea>
+                </div>
+              </div>
+              <div class="field skills">
+                <label class="label">Skills</label>
+                <div class="control">
+                  <input class="input" type="text" placeholder="HTML, CSS, JavaScript, ...">
+                </div>
+              </div>
           
-      
-        <button class="button">Create</button>
-      </form>
-    </div>
-
-    <!--The popup for editing a CV-->
-
-    <div class="popup edit-cv is-hidden">
-      <div class="background"></div>
-      <form class="box">
-        <i class="fa-solid fa-xmark exit"></i>
-        <div class="field">
-          <label class="label">CV Name</label>
-          <div class="control">
-            <input class="input" type="text" placeholder="CV Name">
-          </div>
+            <button class="button">Create</button>
+          </form>
         </div>
-          <div class="field experience">
-            <label class="label">Education</label>
-            <div class="control">
-              <input class="input" type="text" placeholder="Degree">
-              <input class="input" type="text" placeholder="Field of Study">
-              <input class="input" type="number" placeholder="Start Date">
-              <input class="input" type="number" placeholder="End Date">
-              <textarea class="input" placeholder="Description"></textarea>
-            </div>
-          </div>
-          <div class="field education">
-            <label class="label">Experience</label>
-            <div class="control">
-              <input class="input" type="text" placeholder="Position">
-              <input class="input" type="number" placeholder="Start Date">
-              <input class="input" type="number" placeholder="End Date">
-              <textarea class="input" placeholder="Description"></textarea>
-            </div>
-          </div>
-          <div class="field skills">
-            <label class="label">Skills</label>
-            <div class="control">
-              <input class="input" type="text" placeholder="HTML, CSS, JavaScript, ...">
-            </div>
-          </div>
-        <button class="button">Save Changes</button>
-      </form>
-    </div>
-
-    <!--The popup for creating a new CV-->
-
-    <div class="popup create-cv is-hidden">
-      <div class="background"></div>
-      <form class="box">
-        <i class="fa-solid fa-xmark exit"></i>
-        <div class="field">
-          <label class="label">CV Name</label>
-          <div class="control">
-            <input class="input" type="text" placeholder="CV Name">
-          </div>
-        </div>
-          <div class="field experience">
-            <label class="label">Education</label>
-            <div class="control">
-              <input class="input" type="text" placeholder="Degree">
-              <input class="input" type="text" placeholder="Field of Study">
-              <input class="input" type="number" placeholder="Start Year">
-              <input class="input" type="number" placeholder="End Year">
-              <textarea class="input" placeholder="Description"></textarea>
-            </div>
-          </div>
-          <div class="field education">
-            <label class="label">Experience</label>
-            <div class="control">
-              <input class="input" type="text" placeholder="Position">
-              <input class="input" type="number" placeholder="Start Year">
-              <input class="input" type="number" placeholder="End Year">
-              <textarea class="input" placeholder="Description"></textarea>
-            </div>
-            
-          </div>
-          <div class="field skills">
-            <label class="label">Skills</label>
-            <div class="control">
-              <input class="input" type="text" placeholder="HTML, CSS, JavaScript, ...">
-            </div>
-          </div>
-        <button class="button">Create</button>
-      </form>
-    </div>
-  
-      <!--The popup for creating a new CV-->
-  
-      <div class="popup create-cv  is-hidden">
-        <div class="background"></div>
-        <form class="box">
-          <i class="fa-solid fa-xmark exit"></i>
-          <div class="field">
-            <label class="label">CV Name</label>
-            <div class="control">
-              <input class="input" type="text" placeholder="CV Name">
-            </div>
-          </div>
-            <div class="field experience">
-              <label class="label">Education</label>
-              <div class="control">
-                <input class="input" type="text" placeholder="Degree" name="degree">
-                <input class="input" type="text" placeholder="Field of Study" name="field_of_study">
-                <input class="input" type="number" min="1900" max="2100" placeholder="Start Year" name="start_year_study">
-                <input class="input" type="number" min="1900" max="2100" placeholder="End Year" name="end_year_study">
-                <textarea class="input" placeholder="Description" name="edu_des"></textarea>
-              </div>
-            </div>
-            
-            <div class="field education">
-              <label class="label">Experience</label>
-              <div class="control">
-                <input class="input" type="text" placeholder="Position" name="position">
-                <input class="input" type="number" min="1900" max="2100" placeholder="Start Year" name="start_year_xp">
-                <input class="input" type="number" min="1900" max="2100" placeholder="End Year" name="end_year_xp">
-                <textarea class="input" placeholder="Description"></textarea>
-              </div>
-            </div>
-            <div class="field skills">
-              <label class="label">Skills</label>
-              <div class="control">
-                <input class="input" type="text" placeholder="HTML, CSS, JavaScript, ..." name="skills">
-              </div>
-            </div>
-          <button class="button">Create</button>
-        </form>
-      </div>
-    </div>
 
     <!--The popup for deleting a cv-->
     <div class="popup confirmation is-hidden">
