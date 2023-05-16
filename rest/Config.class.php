@@ -16,5 +16,9 @@ class Config {
     public static function DB_SCHEMA(){
       return 'cv_management';
     }
+
+    public static function JWT_SECRET(){
+      return Config::get_env("JWT_SECRET", "ezcb9s8UcF");
+    }
 }
 ?>
