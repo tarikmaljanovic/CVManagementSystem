@@ -8,6 +8,7 @@
   <script defer src="../js_files/jquery-3.6.4.js"></script>
   <script defer src="../js_files/jquery-3.6.4.min.js"></script>
   <script defer src="../js_files/login.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
   <title>CV Management System-Login</title>
 </head>
 <body>
@@ -21,35 +22,35 @@
       <div class="field">
         <label class="label email-login">Email</label>
         <div class="control">
-          <input class="input email-login-input" type="email" placeholder="email@example.com">
+          <input class="input email-login-input" type="email" placeholder="email@example.com" name="emailLogin">
         </div>
       </div>
       <div class="field">
         <label class="label password-login">Password</label>
         <div class="control">
-          <input class="input password-login-input" type="password" placeholder="********">
+          <input class="input password-login-input" type="password" placeholder="********" name="passwordLogin">
         </div>
       </div>
       <div class="buttons">
-        <button class="button is-rounded" id="login-button">Log in</button>
+        <button class="button is-rounded" type="submit" id="login-button">Log in</button>
         <button class="button is-rounded" id="signup-switch">Sign up</button>
       </div>
     </form>
     <form class="box signup-box hidden">
       <div class="field">
-        <label class="label first-name">First Name</label>
+        <label class="label first-name" name="firstNameSignup">First Name</label>
         <div class="control">
           <input class="input first-name-input" type="text" placeholder="First Name">
         </div>
       </div>
       <div class="field">
-        <label class="label last-name">Last Name</label>
+        <label class="label last-name" name="lastNameSignup">Last Name</label>
         <div class="control">
           <input class="input last-name-input" type="text" placeholder="Last Name">
         </div>
       </div>
       <div class="field">
-        <label class="label email-signup">Email</label>
+        <label class="label email-signup" name="emailSignup">Email</label>
         <div class="control">
           <input class="input email-signup-input" type="email" placeholder="email@example.com">
         </div>
@@ -57,17 +58,11 @@
       <div class="field">
         <label class="label password-signup">Password</label>
         <div class="control">
-          <input class="input password-signup-input" type="password" placeholder="********">
-        </div>
-      </div>
-      <div class="field">
-        <label class="label password-conf">Confirm Password</label>
-        <div class="control">
-          <input class="input password-conf-input" type="password" placeholder="********">
+          <input class="input password-signup-input" type="password" placeholder="********" name="passwordSign">
         </div>
       </div>
       <div class="buttons">
-        <button class="button is-rounded" id="signup-button">Sign up</button>
+        <button class="button is-rounded" type="submit" id="signup-button">Sign up</button>
         <button class="button is-rounded" id="login-switch">Log in</button>
       </div>
     </form>
