@@ -1,5 +1,8 @@
 <?php
 
+use Firebase\JWT\JWT;
+use Firebase\JWT\Key;
+
 Flight::route("GET /users", function(){
     Flight::json(Flight::userService()->get_all());
  });
@@ -33,17 +36,17 @@ Flight::route("GET /users", function(){
 
  Flight::route('POST /register', function(){
    $data = Flight::request()->data->getData();
-   $data['password'] = md5($data['password']);
+   $data['passwrd'] = md5($data['passwrd']);
    $user = Flight::userService()->add($data);
    Flight::json($user);}
  );
 
  Flight::route('POST /login', function(){
    $login = Flight::request()->data->getData();
-   $user = Flight::userService()->getUserByEmail($login['emailLogIn']);
+   $user = Flight::userService()->getUserByEmail($login['emailLogin']);
    if (isset($user['id'])){
-     if($user['password'] == md5($login['passwordLogIn'])){
-       unset($user['password']);
+     if($user['passwrd'] == md5($login['passwordLogin'])){
+       unset($user['passwrd']);
        $jwt = JWT::encode($user, Config::JWT_SECRET(), 'HS256');
        Flight::json(['token' => $jwt]);
      }else{

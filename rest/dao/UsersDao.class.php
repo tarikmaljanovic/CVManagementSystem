@@ -7,7 +7,7 @@
     }
 
     public function getUserByEmail($email){
-      return $this->query_unique("SELECT * FROM users WHERE email = :email", ['email' => $email]);
+      return $this->query_unique("SELECT * FROM users WHERE email = :email ", ['email' => $email]);
     }
   }
 ?>

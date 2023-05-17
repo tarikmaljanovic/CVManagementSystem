@@ -64,12 +64,12 @@
       return $entity;
     }
 
-    public function query($query){
+    public function query($query, $params){
       $stmt = $this->conn->prepare($query);
-      $stmt->execute();
+      $stmt->execute($params);
       return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
-
+  
     public function query_unique($query, $params){
       $results = $this->query($query, $params);
       return reset($results);

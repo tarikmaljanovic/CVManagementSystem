@@ -21,22 +21,20 @@ let userService = {
 
         setTimeout(()=>{this.logout();}, 3000)
       }
+    } else {
+      console.log("no tokeen")
     }
 
-    $('.login-box').validate({
+    $('#login-box').validate({
       rules: {
         emailLogin: {
           required: true,
           email: true
         },
-
         passwordLogin: {
           required: true,
           minlength: 5
         }
-        
-
-
       },
 
       messages: {
@@ -47,78 +45,77 @@ let userService = {
         },
         passwordLogIn: {
             required: "specify password",
-            minlength: "Password must be at least 6 characters long"
+            minlength: "Password must be at least 5 characters long"
         }
-    },
-    submitHandler: function(form){
-      let user={};
+      },
 
-      user.email = $('.email-login-input').val();
-      user.password = $('.password-login-input').val();
-
-      userService.login(user);
-    }
+      submitHandler: function(form) {
+        let user = Object.fromEntries((new FormData(form)).entries());
+        userService.login(user);
+      },
     });
 
-    $('.signup-box').validate({
+    $('#signup-box').validate({
       rules: {
-        firstNameSignup:{
+        emailSignup:{
           required: true,
           email: true
         },
-
-      firstNameSignup: {
-        required: true
-      },
-      lastNameSignup:{
-        required: true
-      },
-
-      passwordSignup: {
-        required: true,
-        minlength: 5
-      }
+        firstNameSignup: {
+          required: true
+        },
+        lastNameSignup:{
+          required: true
+        },
+        passwordSignup: {
+          required: true,
+          minlength: 5
+        }
       },
 
       messages: {
         emailSignup: {
           required: "Please enter an email",
          
-      },
-      passwordSignUp: {
+        },
+        passwordSignUp: {
           required: "Please enter a password",
           minlength: "Your password must be consist of at least 5 characters"
-      },
+        },
+        firstNameSignup: {
+          required: "Please enter your first name"
+        },
+        lastNameSignup: {
+          required: "Please enter your last name"
+        }
       },
 
       submitHandler: function(form) {
         let user = {};
         user.email= $('.email-signup-input').val();
-        user.firstname= $('.first-name-input').val();
-        user.lastname= $('.last-name-input').val();
-        user.password= $('.password-signup-input').val();
+        user.first_name= $('.first-name-input').val();
+        user.last_name= $('.last-name-input').val();
+        user.passwrd= $('.password-signup-input').val()
+        let yourDate = new Date()
+        user.account_creation = yourDate.toISOString().split('T')[0]
 
         userService.register(user);
       }
-
     });
-
-
-
-
   },
 
   login: function(user) {
     $.ajax({
       type:"POST",
-      url:'rest/login',
+      url:'login',
       data: JSON.stringify(user),
       contentType: "application/json",
       dataType:"json",
 
       success: function(data) {
         localStorage.setItem("token", data.token);
-        window.location.replace("./profile.html");
+        localStorage.setItem("user", JSON.stringify(parsedUser));
+        window.location.replace("profile");
       },
 
 
@@ -128,16 +125,15 @@ let userService = {
     });
   },
 
-
   logout: function () {
     localStorage.clear();
-    window.location.replace("./login.html");
-},
+    window.location.replace("/");
+  },
 
-  register: function(user){
+  register: function(user) {
    $.ajax({
     type: "POST",
-    url: ' rest/register',
+    url: 'register',
     data: JSON.stringify(user),
     contentType: "application/json",
     dataType: "json",
@@ -149,15 +145,10 @@ let userService = {
       console.log('You have been succesfully registered.');
       window.location.replace("./login.html");
 
-  },
+    },
     error: function (XMLHttpRequest, textStatus, errorThrown) {
-
-      console.log("User already exists!");
-   }}) 
+      console.log("belaj!");
+      }
+    }) 
   }
-
-
-
-
-
 }

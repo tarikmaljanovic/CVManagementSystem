@@ -12,12 +12,4 @@ $(document).ready(function() {
 
     return false;
   });
-
-  $(".login-box").click(function(event) {
-    return false;
-  });
-  
-  $(".signup-box").click(function(event) {
-    return false;
-  });
 });

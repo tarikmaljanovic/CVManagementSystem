@@ -18,7 +18,7 @@
         <p class="title">CV Management System</p>
       </div>
     </section>
-    <form class="box login-box">
+    <form class="box login-box" id="login-box">
       <div class="field">
         <label class="label email-login">Email</label>
         <div class="control">
@@ -32,33 +32,33 @@
         </div>
       </div>
       <div class="buttons">
-        <button class="button is-rounded" type="submit" id="login-button">Log in</button>
+        <button class="button is-rounded" id="login-button" type="submit">Log in</button>
         <button class="button is-rounded" id="signup-switch">Sign up</button>
       </div>
     </form>
-    <form class="box signup-box hidden">
+    <form class="box signup-box hidden" id="signup-box">
       <div class="field">
-        <label class="label first-name" name="firstNameSignup">First Name</label>
+        <label class="label first-name">First Name</label>
         <div class="control">
-          <input class="input first-name-input" type="text" placeholder="First Name">
+          <input class="input first-name-input" type="text" placeholder="First Name" name="firstNameSignup">
         </div>
       </div>
       <div class="field">
-        <label class="label last-name" name="lastNameSignup">Last Name</label>
+        <label class="label last-name">Last Name</label>
         <div class="control">
-          <input class="input last-name-input" type="text" placeholder="Last Name">
+          <input class="input last-name-input" type="text" placeholder="Last Name" name="lastNameSignup">
         </div>
       </div>
       <div class="field">
-        <label class="label email-signup" name="emailSignup">Email</label>
+        <label class="label email-signup">Email</label>
         <div class="control">
-          <input class="input email-signup-input" type="email" placeholder="email@example.com">
+          <input class="input email-signup-input" type="email" placeholder="email@example.com" name="emailSignup">
         </div>
       </div>
       <div class="field">
         <label class="label password-signup">Password</label>
         <div class="control">
-          <input class="input password-signup-input" type="password" placeholder="********" name="passwordSign">
+          <input class="input password-signup-input" type="password" placeholder="********" name="passwordSignup">
         </div>
       </div>
       <div class="buttons">
@@ -68,5 +68,11 @@
     </form>
     
   </div>
+  <script src="../js_files/jquery-3.6.4.js"></script>
+  <script src="../js_files/jquery-3.6.4.min.js"></script>
+  <script type="text/javascript" src="../js_files/login.js"></script>
+  <script type="text/javascript" src="../js_files/userService.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
+  <script> userService.serve() </script>
 </body>
 </html>
