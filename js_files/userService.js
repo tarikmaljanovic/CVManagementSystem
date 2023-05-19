@@ -17,12 +17,12 @@ let userService = {
       }
 
       catch(error){
-        console.error("Invalid token");
+        console.error("Invalid Token");
 
-        setTimeout(()=>{this.logout();}, 3000)
+        setTimeout(()=>{userService.logout();}, 3000)
       }
     } else {
-      console.log("no tokeen")
+      console.log("Token Missing")
     }
 
     $('#login-box').validate({
@@ -120,7 +120,7 @@ let userService = {
 
 
       error: function(XMLHttpRequest, textStatus, errorThrown){
-        console.log("nije to dobro");
+        console.log("Login Failed!");
       }
     });
   },
@@ -147,7 +147,7 @@ let userService = {
 
     },
     error: function (XMLHttpRequest, textStatus, errorThrown) {
-      console.log("belaj!");
+      console.log("Registration Failed!");
       }
     }) 
   }
