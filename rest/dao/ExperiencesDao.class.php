@@ -7,8 +7,7 @@
     }
 
     public function getExperienceByCv($id) {
-      $result = $this->query("SELECT * FROM experiences WHERE cv_id = '$id'");
-      return $result;
+      return $this->query("SELECT * FROM experiences WHERE cv_id = :id ", ['id' => $id]);
     }
   }
 ?>

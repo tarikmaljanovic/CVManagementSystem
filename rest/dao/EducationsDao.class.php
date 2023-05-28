@@ -7,8 +7,7 @@
     }
 
     public function getEducationByCv($id) {
-      $result = $this->query("SELECT * FROM educations WHERE cv_id = '$id'");
-      return $result;
+      return $this->query("SELECT * FROM educations WHERE cv_id = :id ", ['id' => $id]);
     }
   }
 ?>

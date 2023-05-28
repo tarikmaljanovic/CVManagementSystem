@@ -7,8 +7,7 @@
     }
 
     public function getSkillsByCv($id) {
-      $result = $this->query("SELECT * FROM user_skills WHERE cv_id = '$id'");
-      return $result;
+      return $this->query("SELECT * FROM user_skills WHERE cv_id = :id ", ['id' => $id]);
     }
   }
 ?>
