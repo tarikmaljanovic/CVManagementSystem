@@ -112,6 +112,7 @@ let userService = {
       contentType: "application/json",
       dataType:"json",
 
+      
       success: function(data) {
         localStorage.setItem("token", data.token);
         localStorage.setItem("user", JSON.stringify(parsedUser));

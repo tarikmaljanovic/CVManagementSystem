@@ -21,6 +21,29 @@
   Flight::register('skillService', 'SkillService');
   Flight::register('userSkillService', 'UserSkillService');
 
+  Flight::route('/*', function(){
+
+    //return TRUE;
+    //perform JWT decode
+    $path = Flight::request()->url;
+    if ($path == '/login' || $path == '/register' || $path == '/docs.json' || $path == '/' || $path == '/profile') return TRUE;
+    $headers = getallheaders();
+    if (@!$headers['Authorization']){
+        Flight::json(["message" => $path], 403);
+        Flight::json(["message" => "Authorization is missing"], 403);
+        return FALSE;
+    }else{
+        try {
+            $decoded = (array)JWT::decode($headers['Authorization'], new Key(Config::JWT_SECRET(), 'HS256'));
+            Flight::set('user', $decoded);
+            return TRUE;
+        } catch (\Exception $e) {
+            Flight::json(["message" => "Authorization token is not valid"], 403);
+            return FALSE;
+        }
+    }
+  });
+
   Flight::route("/", function() {
     require "../login.html";
   });
@@ -28,6 +51,7 @@
   Flight::route("GET /profile", function() {
     require "../profile.html";
   });
+
 
   require './routes/CompanyRoutes.php';
   require './routes/CVRoutes.php';
