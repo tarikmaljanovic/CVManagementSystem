@@ -127,7 +127,7 @@ let userService = {
 
   logout: function () {
     localStorage.clear();
-    window.location.replace("");
+    window.location.replace("landing");
   },
 
   register: function(user) {
@@ -143,7 +143,7 @@ let userService = {
       localStorage.setItem("token", data.token);
       console.log(data.token);
       localStorage.clear();
-      window.location.replace("");
+      window.location.reload();
 
     },
     error: function (XMLHttpRequest, textStatus, errorThrown) {

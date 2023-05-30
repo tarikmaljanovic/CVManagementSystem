@@ -26,7 +26,7 @@
     //return TRUE;
     //perform JWT decode
     $path = Flight::request()->url;
-    if ($path == '/login' || $path == '/register' || $path == '/docs.json' || $path == '/' || $path == '/profile') return TRUE;
+    if ($path == '/login' || $path == '/register' || $path == '/docs.json' || $path == '/landing' || $path == '/profile' || $path == '/') return TRUE;
     $headers = getallheaders();
     if (@!$headers['Authorization']){
         Flight::json(["message" => $path], 403);
@@ -44,12 +44,16 @@
     }
   });
 
-  Flight::route("/", function() {
+  Flight::route("GET /landing", function() {
     require "../login.html";
   });
 
   Flight::route("GET /profile", function() {
     require "../profile.html";
+  });
+
+  Flight::route('/', function() {
+    Flight::redirect('/landing');
   });
 
 
