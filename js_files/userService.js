@@ -127,7 +127,7 @@ let userService = {
 
   logout: function () {
     localStorage.clear();
-    window.location.replace("/");
+    window.location.replace("");
   },
 
   register: function(user) {
@@ -141,7 +141,8 @@ let userService = {
     success: function (data) {
 
       localStorage.setItem("token", data.token);
-      console.log('You have been succesfully registered.');
+      console.log(data.token);
+      localStorage.clear();
       window.location.replace("");
 
     },
