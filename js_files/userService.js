@@ -19,7 +19,7 @@ let userService = {
       catch(error){
         console.error("Invalid Token");
 
-        // setTimeout(()=>{userService.logout();}, 3000)
+        setTimeout(()=>{userService.logout();}, 3000)
       }
     } else {
       console.log("Token Missing")
@@ -111,7 +111,6 @@ let userService = {
       data: JSON.stringify(user),
       contentType: "application/json",
       dataType:"json",
-
       
       success: function(data) {
         localStorage.setItem("token", data.token);
@@ -128,7 +127,7 @@ let userService = {
 
   logout: function () {
     localStorage.clear();
-    window.location.replace("/");
+    window.location.replace("");
   },
 
   register: function(user) {
@@ -141,9 +140,9 @@ let userService = {
 
     success: function (data) {
 
-      // localStorage.setItem("token", data.token);
-      // console.log(data.token);
-      console.log('You have been succesfully registered.');
+      localStorage.setItem("token", data.token);
+      console.log(data.token);
+      localStorage.clear();
       window.location.replace("");
 
     },
