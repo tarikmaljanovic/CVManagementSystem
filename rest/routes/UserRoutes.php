@@ -26,4 +26,15 @@ use Firebase\JWT\Key;
    }
  });
 
+ Flight::route('PUT /update', function(){
+  $data = Flight::request()->data->getData();
+
+  $id = $data["firstname"];
+  $firstname = $data['firstname'];
+  $lastname = $data['lastname'];
+  $email = $data['email'];
+
+  Flight::userService()->updateProfile($id, $firstname, $lastname, $email);
+ })
+
 ?>
