@@ -6,11 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MyProfile</title>
     <link rel="stylesheet" href="../styles/profile.css">
-    <script defer src="../js_files/jquery-3.6.4.min.js"></script>
-    <script defer src="../js_files/jquery-3.6.4.js"></script>
-    <script defer src="../js_files/profile.js"></script>
-    <script defer src="../js_files/editProfile.js"></script>
-    <script src="https://kit.fontawesome.com/b3917926bf.js" crossorigin="anonymous"></script>
 </head>
 <body>
   <div class="container is-fluid p-0">
@@ -33,7 +28,7 @@
                   Edit Profile
                 </a>
                 <hr class="dropdown-divider">
-                <a href="#" class="dropdown-item log-out-btn">
+                <a href="#" class="dropdown-item log-out-btn" id="logout-button">
                   <i class="fa-solid fa-right-from-bracket"></i>
                   Log out
                 </a>
@@ -106,7 +101,7 @@
 
     <div class="popup edit-profile is-hidden">
       <div class="background"></div>
-      <form class="box edit-profile">
+      <form class="box edit-profile" id="edit-profile">
         <i class="fa-solid fa-xmark exit"></i>
         <div class="field">
           <label class="label">First Name</label>
@@ -132,7 +127,7 @@
             <input class="input" type="text" placeholder="01/01/2023" disabled>
           </div>
         </div>
-        <button class="button form-button is-rounded">Save Changes</button>
+        <button class="button form-button is-rounded" type="submit" id="submit-button">Save Changes</button>
       </form>
     </div>
 
@@ -247,7 +242,13 @@
         </div>
       </form>
     </div>
-
   </div>
+  <script src="https://kit.fontawesome.com/b3917926bf.js" crossorigin="anonymous"></script>
+  <script src="../js_files/jquery-3.6.4.min.js"></script>
+  <script src="../js_files/jquery-3.6.4.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
+  <script type="text/javascript" src="../js_files/profileService.js"></script>
+  <script type="text/javascript" src="../js_files/profile.js"></script>
+  <script>editProfile.serve()</script>
 </body>
 </html>
