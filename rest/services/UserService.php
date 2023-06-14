@@ -12,8 +12,6 @@
     }
 
     public function updateProfile($id, $firstname, $lastname, $email) {
-      
-      
       $this->dao->updateProfile($id, $firstname, $lastname, $email);
     }
   }
