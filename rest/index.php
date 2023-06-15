@@ -40,11 +40,6 @@
     }
   });
 
-  Flight::route('GET /docs.json', function(){
-    $openapi = \OpenApi\scan('routes');
-    header('Content-Type: application/json');
-    echo $openapi->toJson();
-  });
 
   Flight::route("GET /landing", function() {
     require "../login.html";
@@ -56,6 +51,12 @@
 
   Flight::route('/', function() {
     Flight::redirect('/landing');
+  });
+
+  Flight::route('GET /docs.json', function(){
+    $openapi = \OpenApi\scan('routes');
+    header('Content-Type: application/json');
+    echo $openapi->toJson();
   });
 
 
