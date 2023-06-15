@@ -8,6 +8,12 @@ Flight::route("GET /userSkills", function(){
     Flight::json(Flight::userSkillService()->get_by_id(Flight::request()->query['id']));
  });
 
+   /**
+* @OA\Get(path="/getSkillsByCv/{id}", tags={"Get Skills by CV ID"}, security={{"ApiKeyAuth": {}}},
+*     @OA\Parameter(in="path", name="id", description="CV ID"),
+*     @OA\Response(response="200", description="Gets Skill entries for a given CV")
+* )
+*/
  Flight::route("GET /getSkillsByCv/@id", function($id){
    Flight::json(Flight::userSkillService()->getSkillsByCv($id));
 });

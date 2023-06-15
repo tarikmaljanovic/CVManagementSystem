@@ -12,6 +12,12 @@ Flight::route("GET /educations", function(){
     Flight::json(Flight::educationService()->get_by_id($id));
  });
 
+ /**
+* @OA\Get(path="/getEducationByCv/{id}", tags={"Get Education by CV ID"}, security={{"ApiKeyAuth": {}}},
+*     @OA\Parameter(in="path", name="id", description="CV ID"),
+*     @OA\Response(response="200", description="Gets Education entries for a given CV")
+* )
+*/
  Flight::route("GET /getEducationByCv/@id", function($id){
    Flight::json(Flight::educationService()->getEducationByCv($id));
  });

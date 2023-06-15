@@ -12,6 +12,12 @@ Flight::route("GET /experiences", function(){
     Flight::json(Flight::experienceService()->get_by_id($id));
  });
 
+  /**
+* @OA\Get(path="/getExperienceByCv/{id}", tags={"Get Experience by CV ID"}, security={{"ApiKeyAuth": {}}},
+*     @OA\Parameter(in="path", name="id", description="CV ID"),
+*     @OA\Response(response="200", description="Gets Experience entries for a given CV")
+* )
+*/
  Flight::route("GET /getExperienceByCv/@id", function($id){
    Flight::json(Flight::experienceService()->getExperienceByCv($id));
  });

@@ -12,6 +12,12 @@ Flight::route("GET /cvs", function(){
     Flight::json(Flight::cvService()->get_by_id($id));
  });
 
+/**
+* @OA\Get(path="/getCvsByUser/{id}", tags={"Get CV by ID"}, security={{"ApiKeyAuth": {}}},
+*     @OA\Parameter(in="path", name="id", description="User ID"),
+*     @OA\Response(response="200", description="Gets CVs for a given user ID")
+* )
+*/
  Flight::route("GET /getCvsByUser/@id", function($id){
    Flight::json(Flight::cvService()->getCvsByUser($id));
 });

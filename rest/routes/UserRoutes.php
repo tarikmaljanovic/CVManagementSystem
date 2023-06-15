@@ -10,7 +10,7 @@ use Firebase\JWT\Key;
 * @OA\Post(
 *     path="/register",
 *     description="Register to the system",
-*     tags={"user"},
+*     tags={"Register"},
 *     @OA\RequestBody(description="Basic user info", required=true,
 *       @OA\MediaType(mediaType="application/json",
 *    			@OA\Schema(
@@ -41,7 +41,7 @@ use Firebase\JWT\Key;
 * @OA\Post(
 *     path="/login", 
 *     description="Login",
-*     tags={"login"},
+*     tags={"Login"},
 *     @OA\RequestBody(description="Login", required=true,
 *       @OA\MediaType(mediaType="application/json",
 *    			@OA\Schema(
@@ -76,6 +76,11 @@ use Firebase\JWT\Key;
    }
  });
 
+/**
+* @OA\Put(path="/update", tags={"Update user with given information"}, security={{"ApiKeyAuth": {}}},
+*     @OA\Response(response="200", description="Updates the user's information in the database")
+* )
+*/
  Flight::route('PUT /update', function(){
   $data = Flight::request()->data->getData();
 
