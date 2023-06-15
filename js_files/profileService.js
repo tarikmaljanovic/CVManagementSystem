@@ -17,7 +17,7 @@ let editProfile = {
   
        });
 
-       $("#logout-button").click(function() {
+       $("#logout-button, .log-out-btn").click(function() {
         editProfile.logout();
        })
 
