@@ -68,4 +68,5 @@
   require './routes/EducationRoutes.php';
 
   Flight::start();
+  
 ?>
