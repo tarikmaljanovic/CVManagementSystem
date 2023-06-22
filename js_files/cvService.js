@@ -1,6 +1,6 @@
 let cvService = {
     serve: function(){
-        $()
+        
     }
 
 }

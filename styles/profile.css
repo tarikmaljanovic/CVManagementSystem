@@ -52,6 +52,7 @@
   .container .hero .hero-body .bottom .columns .profile-info {
     justify-content: center;
     align-items: center;
+    font-size: 19px;
   }
 }
 .container .cv-section {
@@ -111,6 +112,9 @@
 .container .cv-section .cv .buttons .button:hover {
   background-color: #787ffe;
   transition: 0.3s ease;
+}
+.container .cv-section .cv .buttons .footer .createButton {
+  align-items: right;
 }
 .container .sidebar {
   position: absolute;
