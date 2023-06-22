@@ -1,4 +1,7 @@
 <?php
+  use Firebase\JWT\JWT;
+  use Firebase\JWT\Key;
+
   require '../vendor/autoload.php';
   require 'services/UserService.php';
   require 'services/CVService.php';
@@ -58,7 +61,6 @@
     header('Content-Type: application/json');
     echo $openapi->toJson();
   });
-
 
   require './routes/CVRoutes.php';
   require './routes/ExperienceRoutes.php';

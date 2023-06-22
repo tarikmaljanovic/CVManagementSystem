@@ -11,7 +11,7 @@
     }
 
     public function updateProfile($id, $firstname, $lastname, $email){
-      return $this->query("UPDATE users SET firstname = :firstname, lastname= :lastname, email= :email WHERE id= :id", ['email'=> $email, 'firstname'=>$firstname, 'lastname'=>$lastname, 'id'=>$id]);
+      return $this->query("UPDATE users SET first_name = :firstname, last_name = :lastname, email = :email WHERE id = :id", ['email'=> $email, 'firstname'=>$firstname, 'lastname'=>$lastname, 'id'=>$id]);
     }
   }
 ?>
