@@ -10,5 +10,13 @@
     public function getSkillsByCv($id) {
       return $this->dao->getSkillsByCv($id);
     }
+
+    public function deleteSkillsByCv($id) {
+      return $this->dao->deleteSkillsByCv($id);
+    }
+
+    public function update($data) {
+      return $this->dao->update($data);
+    }
   }
 ?>

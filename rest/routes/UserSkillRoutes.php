@@ -17,6 +17,10 @@ Flight::route("GET /userSkills", function(){
  Flight::route("GET /getSkillsByCv/@id", function($id){
    Flight::json(Flight::userSkillService()->getSkillsByCv($id));
 });
+
+Flight::route("DELETE /delSkillsByCv/@id", function($id) {
+   Flight::json(Flight::userSkillService()->deleteSkillsByCv($id));
+});
  
  Flight::route("GET /userSkills", function($id){
     Flight::json(Flight::userSkillService()->get_by_id($id));
@@ -34,11 +38,9 @@ Flight::route("GET /userSkills", function(){
                  ]);
  });
  
- Flight::route("PUT /userSkill/@id", function($id){
-    $student = Flight::request()->data->getData();
-    Flight::json(['message' => "User Skill edit successfully",
-                  'data' => Flight::userSkillService()->update($student, $id)
-                 ]);
+ Flight::route("POST /skillUpdate", function() {
+   $request = Flight::request()->data->getData();
+   Flight::userSkillService()->update($request);
  });
 
 ?>

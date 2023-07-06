@@ -10,5 +10,13 @@
     public function getEducationByCv($id) {
       return $this->dao->getEducationByCv($id);
     }
+
+    public function deleteEducationByCv($id) {
+      return $this->dao->deleteEducationByCv($id);
+    }
+
+    public function update($data) {
+      return $this->dao->update($data);
+    }
   }
 ?>

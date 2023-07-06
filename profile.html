@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MyProfile</title>
+    <title>CV Management System-MyProfile</title>
     <link rel="stylesheet" href="../styles/profile.css">
 </head>
 <body>
@@ -55,16 +55,6 @@
     <!--The section of the profile page which contains the CVs and the add new CV option-->
 
     <div class="columns cv-section m-3" id="1">
-      <div class="column is-3 cv">
-        <div class="notification">
-          <p class="cv-title">CV Name</p>
-          <p class="creation-date">01/01/2023</p>
-        </div>
-        <div class="buttons">
-          <button class="button is-rounded" id="edit-CV">Edit</button>
-          <button class="button is-rounded" id="delete-CV">Delete</button>
-        </div>
-      </div>
       <div class="column is-3 cv cv-add">
         <div class="notification">
           <i class="fa-solid fa-plus"></i>
@@ -140,49 +130,49 @@
         <div class="field">
           <label class="label">CV Name</label>
           <div class="control">
-            <input class="input" type="text" placeholder="CV Name">
+            <input class="input" type="text" placeholder="cv_name" id="cv-name">
           </div>
         </div>
         <div class="field">
           <label class="label">Biography/Profile</label>
           <div class="control">
-            <input class="input" type="text" placeholder="Bio">
+            <input class="input" type="text" placeholder="bio" id="bio">
           </div>
         </div>
           <div class="field education edu-create">
             <label class="label">Education</label>
             <div class="control">
-              <input class="input" type="text" placeholder="University">
-              <input class="input" type="text" placeholder="Degree">
-              <input class="input" type="text" placeholder="Field of Study">
-              <input class="input" type="number" min="1900" max="2100" placeholder="Start Date">
-              <input class="input" type="number" min="1900" max="2100" placeholder="End Date">
-              <textarea class="input" placeholder="Description"></textarea>
+              <input class="input" type="text" placeholder="edu_inst_name">
+              <input class="input" type="text" placeholder="degree">
+              <input class="input" type="text" placeholder="field_of_study">
+              <input class="input" type="number" min="1900" max="2100" placeholder="start_date">
+              <input class="input" type="number" min="1900" max="2100" placeholder="end_date">
+              <textarea class="input" placeholder="description"></textarea>
             </div>
           </div>
           <button class="button" id="add-education-section">Add another education section</button>
           <div class="field experience exp-create">
             <label class="label">Experience</label>
             <div class="control">
-              <input class="input" type="text" placeholder="Company">
-              <input class="input" type="text" placeholder="Position">
-              <input class="input" type="number" min="1900" max="2100" placeholder="Start Date">
-              <input class="input" type="number" min="1900" max="2100" placeholder="End Date">
-              <textarea class="input" placeholder="Description"></textarea>
+              <input class="input" type="text" placeholder="company_name">
+              <input class="input" type="text" placeholder="position">
+              <input class="input" type="number" min="1900" max="2100" placeholder="start_date">
+              <input class="input" type="number" min="1900" max="2100" placeholder="end_date">
+              <textarea class="input" placeholder="description"></textarea>
             </div>
           </div>
           <button class="button" id="add-experience-section">Add another experience section</button>
           <div class="field skills">
             <label class="label">Skills</label>
             <div class="control">
-              <input class="input" type="text" placeholder="HTML, CS S, JavaScript, ...">
+              <input class="input" type="text" placeholder="HTML, CSS, JavaScript, ...">
             </div>
           </div>
-          <button class="button is-rounded createButton">Create</button>
+          <button class="button is-rounded" id="createButton">Create</button>
       </form>
     </div>
 
-    <!--The popup for editing a new CV-->
+    <!--The popup for editing a CV-->
 
     <div class="popup edit-cv  is-hidden">
       <div class="background"></div>
@@ -191,43 +181,26 @@
         <div class="field">
           <label class="label">CV Name</label>
           <div class="control">
-            <input class="input" type="text" placeholder="CV Name">
+            <input id="cv-name2" class="input" type="text" placeholder="CV Name">
           </div>
         </div>
         <div class="field">
           <label class="label">Biography/Profile</label>
           <div class="control">
-            <input class="input" type="text" placeholder="Bio">
+            <input id="bio2" class="input" type="text" placeholder="Bio">
           </div>
         </div>
-          <div class="field experience">
-            <label class="label">Education</label>
-            <div class="control">
-              <input class="input" type="text" placeholder="University">
-              <input class="input" type="text" placeholder="Degree">
-              <input class="input" type="text" placeholder="Field of Study">
-              <input class="input" type="number" placeholder="Start Date">
-              <input class="input" type="number" placeholder="End Date">
-              <textarea class="input" placeholder="Description"></textarea>
-            </div>
+          <div class="field education edu-edit">
           </div>
-          <div class="field education">
-            <label class="label">Experience</label>
-            <div class="control">
-              <input class="input" type="text" placeholder="Company">
-              <input class="input" type="text" placeholder="Position">
-              <input class="input" type="number" placeholder="Start Date">
-              <input class="input" type="number" placeholder="End Date">
-              <textarea class="input" placeholder="Description"></textarea>
-            </div>
+          <div class="field experience exp-edit">
           </div>
           <div class="field skills">
             <label class="label">Skills</label>
             <div class="control">
-              <input class="input" type="text" placeholder="HTML, CSS, JavaScript, ...">
+              <input id="skills-edit" class="input" type="text" placeholder="HTML, CSS, JavaScript, ...">
             </div>
           </div>
-        <button class="button is-rounded">Save Changes</button>
+        <button class="button is-rounded" id="save-cv-changes">Save Changes</button>
       </form>
     </div>
 
@@ -249,6 +222,8 @@
   <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
   <script type="text/javascript" src="../js_files/profileService.js"></script>
   <script type="text/javascript" src="../js_files/profile.js"></script>
+  <script type="text/javascript" src="../js_files/cvService.js"></script>
   <script>editProfile.serve()</script>
+  <script>cvService.serve()</script>
 </body>
 </html>

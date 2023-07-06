@@ -33,12 +33,10 @@ Flight::route("GET /cvs", function(){
                   'data' => Flight::cvService()->add($request)
                  ]);
  });
- 
- Flight::route("PUT /cv/@id", function($id){
-    $student = Flight::request()->data->getData();
-    Flight::json(['message' => "CV edit successfully",
-                  'data' => Flight::cvService()->update($student, $id)
-                 ]);
+
+ Flight::route("POST /cvUpdate", function() {
+   $request = Flight::request()->data->getData();
+   Flight::cvService()->update($request);
  });
 
 ?>

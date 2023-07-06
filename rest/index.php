@@ -6,7 +6,6 @@
   require 'services/UserService.php';
   require 'services/CVService.php';
   require 'services/ExperienceService.php';
-  require 'services/SkillService.php';
   require 'services/UserSkillService.php';
   require 'services/EducationService.php';
   
@@ -17,7 +16,6 @@
   Flight::register('cvService', 'CVService');
   Flight::register('experienceService', 'ExperienceService');
   Flight::register('educationService', 'EducationService');
-  Flight::register('skillService', 'SkillService');
   Flight::register('userSkillService', 'UserSkillService');
 
   Flight::route('/*', function(){
@@ -64,7 +62,6 @@
 
   require './routes/CVRoutes.php';
   require './routes/ExperienceRoutes.php';
-  require './routes/SkillRoutes.php';
   require './routes/UserRoutes.php';
   require './routes/UserSkillRoutes.php';
   require './routes/EducationRoutes.php';

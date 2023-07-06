@@ -10,5 +10,9 @@
     public function getCvsByUser($id) {
       return $this->dao->getCvsByUser($id);
     }
+
+    public function update($data) {
+      return $this->dao->update($data);
+    }
   }
 ?>

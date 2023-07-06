@@ -21,6 +21,10 @@ Flight::route("GET /educations", function(){
  Flight::route("GET /getEducationByCv/@id", function($id){
    Flight::json(Flight::educationService()->getEducationByCv($id));
  });
+
+ Flight::route("DELETE /delEducationByCv/@id", function($id) {
+   Flight::json(Flight::educationService()->deleteEducationByCv($id));
+ });
  
  Flight::route("DELETE /educations/@id", function($id){
     Flight::educationService()->delete($id);
@@ -33,12 +37,10 @@ Flight::route("GET /educations", function(){
                   'data' => Flight::educationService()->add($request)
                  ]);
  });
- 
- Flight::route("PUT /education/@id", function($id){
-    $student = Flight::request()->data->getData();
-    Flight::json(['message' => "Education edit successfully",
-                  'data' => Flight::educationService()->update($student, $id)
-                 ]);
+
+ Flight::route("POST /eduUpdate", function() {
+   $request = Flight::request()->data->getData();
+   Flight::educationService()->update($request);
  });
 
 ?>

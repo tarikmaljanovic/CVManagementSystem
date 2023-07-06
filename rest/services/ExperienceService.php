@@ -10,5 +10,13 @@
     public function getExperienceByCv($id) {
       return $this->dao->getExperienceByCv($id);
     }
+
+    public function deleteExperienceByCv($id) {
+      return $this->dao->deleteExperienceByCv($id);
+    }
+
+    public function update($data) {
+      return $this->dao->update($data);
+    }
   }
 ?>

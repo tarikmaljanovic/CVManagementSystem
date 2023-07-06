@@ -21,6 +21,10 @@ Flight::route("GET /experiences", function(){
  Flight::route("GET /getExperienceByCv/@id", function($id){
    Flight::json(Flight::experienceService()->getExperienceByCv($id));
  });
+
+ Flight::route("DELETE /delExperienceByCv/@id", function($id) {
+   Flight::json(Flight::experienceService()->deleteExperienceByCv($id));
+ });
  
  Flight::route("DELETE /experiences/@id", function($id){
     Flight::experienceService()->delete($id);
@@ -34,11 +38,9 @@ Flight::route("GET /experiences", function(){
                  ]);
  });
  
- Flight::route("PUT /experience/@id", function($id){
-    $student = Flight::request()->data->getData();
-    Flight::json(['message' => "Experience edit successfully",
-                  'data' => Flight::experienceService()->update($student, $id)
-                 ]);
+ Flight::route("POST /expUpdate", function() {
+   $request = Flight::request()->data->getData();
+   Flight::experienceService()->update($request);
  });
 
 ?>
