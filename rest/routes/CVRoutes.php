@@ -1,5 +1,5 @@
 <?php
-
+ use Dompdf\Dompdf;
 Flight::route("GET /cvs", function(){
     Flight::json(Flight::cvService()->get_all());
  });
@@ -37,6 +37,15 @@ Flight::route("GET /cvs", function(){
  Flight::route("POST /cvUpdate", function() {
    $request = Flight::request()->data->getData();
    Flight::cvService()->update($request);
+ });
+
+ Flight::route('GET /pdf', function(){
+
+   $dompdf = new Dompdf();
+   $html = file_get_contents("../srt-resume.html");
+   $dompdf->loadHtml(html_entity_decode($html));
+   $dompdf->render();   
+   return $dompdf->stream('document', array('Attachment' => 0));
  });
 
 ?>

@@ -1,4 +1,6 @@
 let cvService = {
+    selected_cv: "",
+
     serve: function () {
         $("#createButton").click(function() {
             let education_inputs = $(".edu-create :input");
@@ -105,7 +107,7 @@ let cvService = {
                 for(cv of data) {
                     $(".cv-section").prepend(`
                         <div class="column is-3 cv">
-                            <div class="notification">
+                            <div class="notification" onClick="cvService.relocate(${cv.id})">
                                 <p class="cv-title">${cv.cv_name}</p>
                             </div>
                             <div class="buttons">
@@ -477,5 +479,128 @@ let cvService = {
             }
             window.location.reload()
         })
+    },
+
+    relocate: function(id) {
+        localStorage.setItem('selected_cv', id)
+        window.location.replace("template");
+    },
+
+    serve2: function() {
+        let user = JSON.parse(localStorage.getItem('user'))
+
+        $(".first > h1").html(user.first_name + " " + user.last_name)
+        $(".first > h3").html(`<a href="mailto:${user.email}">${user.email}</a>`)
+        $("#head").html(user.first_name + " " + user.last_name + "-CV")
+        $("#footer-name").html(user.first_name + " " + user.last_name + ` - <a href="${user.email}">${user.email}</a>`)
+
+        
+        $.ajax({
+            url: "cvs/" + localStorage.getItem('selected_cv'),
+            type: "GET",
+            beforeSend: function(xhr) {
+                xhr.setRequestHeader('Authorization', localStorage.getItem("token"));
+            },
+            success: function(data) {
+                $("#bio").html(data.bio)
+            },
+            error: function() {
+                console.log("Failed to Load CV")
+            }
+        })
+
+        $.ajax({
+            url: "getSkillsByCv/" + localStorage.getItem('selected_cv'),
+            type: "GET",
+            beforeSend: function(xhr) {
+                xhr.setRequestHeader('Authorization', localStorage.getItem("token"));
+            },
+            success: function(data) {
+                for(let i = 0; i < data.length; i += 3) {
+                    $("#skills-table").append(`
+                        <ul class="talent">
+                            <li>${(data[i].skill_name).trim()}</li>
+                            <li>${(data[i+1].skill_name).trim()}</li>
+                            <li class="last">${(data[i+2].skill_name).trim()}</li>
+                        </ul>
+                    `)
+                }
+            },
+            error: function() {
+                console.log("Failed to load Skills")
+            }
+        })
+
+        $.ajax({
+             url: "getEducationByCv/" + localStorage.getItem('selected_cv'),
+             type: "GET",
+             beforeSend: function(xhr) {
+                xhr.setRequestHeader('Authorization', localStorage.getItem("token"));
+            },
+            success: function(data) {
+                for(let edu of data) {
+                    $("#edu-table").append(`
+                        <div class="yui-u">
+                            <h2>${edu.edu_inst_name}</h2>
+                            <h3>${edu.degree}, ${edu.field_of_study} </h3>
+                            <p>${edu.start_date}-${edu.end_date}</p>
+                            <p>${edu.description}</p>
+                        </div>
+                    `)
+                }
+            },
+            error: function() {
+                console.log("Failed to load Education")
+            }
+        })
+
+        $.ajax({
+            url: "getExperienceByCv/" + localStorage.getItem("selected_cv"),
+            type: "GET",
+            beforeSend: function(xhr) {
+                xhr.setRequestHeader('Authorization', localStorage.getItem("token"));
+            },
+            success: function(data) {
+                for(let i = 0; i < data.length; i++) {
+                    if(i == data.length - 1) {
+                        $("#exp-table").append(`
+                            <div class="job last">
+                                <h2>${data[i].company_name}</h2>
+                                <h3>${data[i].position}</h3>
+                                <h4>${data[i].start_date}-${data[i].end_date}</h4>
+                                <p>${data[i].description}</p>
+                            </div>
+                        `)
+                    } else {
+                        $("#exp-table").append(`
+                            <div class="job">
+                                <h2>${data[i].company_name}</h2>
+                                <h3>${data[i].position}</h3>
+                                <h4>${data[i].start_date}-${data[i].end_date}</h4>
+                                <p>${data[i].description}</p>
+                            </div>
+                        `)
+                    }
+                }
+            },
+            error: function() {
+                console.log("Failed to load Experience")
+            }
+        })
+    },
+
+    pdfConvert: function() {
+        setTimeout(function() {
+            const element = document.body;  // Convert entire HTML body
+            const options = {
+              margin: 10,
+              filename: 'my-document.pdf',
+              image: { type: 'jpeg', quality: 0.98 },
+              html2canvas: { scale: 2 },
+              jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+            };
+          
+            html2pdf().set(options).from(element).save();
+        }, 5000)
     }
 }

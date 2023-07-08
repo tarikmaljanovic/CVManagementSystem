@@ -19,6 +19,8 @@ class ComposerStaticInit1b24bf9cdcdfe53fb1990269c95c87c9
             'Symfony\\Polyfill\\Ctype\\' => 23,
             'Symfony\\Component\\Yaml\\' => 23,
             'Symfony\\Component\\Finder\\' => 25,
+            'Svg\\' => 4,
+            'Sabberworm\\CSS\\' => 15,
         ),
         'P' => 
         array (
@@ -29,12 +31,18 @@ class ComposerStaticInit1b24bf9cdcdfe53fb1990269c95c87c9
         array (
             'OpenApi\\' => 8,
         ),
+        'M' => 
+        array (
+            'Masterminds\\' => 12,
+        ),
         'F' => 
         array (
+            'FontLib\\' => 8,
             'Firebase\\JWT\\' => 13,
         ),
         'D' => 
         array (
+            'Dompdf\\' => 7,
             'Doctrine\\Deprecations\\' => 22,
             'Doctrine\\Common\\Lexer\\' => 22,
             'Doctrine\\Common\\Annotations\\' => 28,
@@ -54,6 +62,14 @@ class ComposerStaticInit1b24bf9cdcdfe53fb1990269c95c87c9
         array (
             0 => __DIR__ . '/..' . '/symfony/finder',
         ),
+        'Svg\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/phenx/php-svg-lib/src/Svg',
+        ),
+        'Sabberworm\\CSS\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/sabberworm/php-css-parser/src',
+        ),
         'Psr\\Log\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/log/src',
@@ -66,9 +82,21 @@ class ComposerStaticInit1b24bf9cdcdfe53fb1990269c95c87c9
         array (
             0 => __DIR__ . '/..' . '/zircote/swagger-php/src',
         ),
+        'Masterminds\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/masterminds/html5/src',
+        ),
+        'FontLib\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/phenx/php-font-lib/src/FontLib',
+        ),
         'Firebase\\JWT\\' => 
         array (
             0 => __DIR__ . '/..' . '/firebase/php-jwt/src',
+        ),
+        'Dompdf\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/dompdf/dompdf/src',
         ),
         'Doctrine\\Deprecations\\' => 
         array (
@@ -86,6 +114,7 @@ class ComposerStaticInit1b24bf9cdcdfe53fb1990269c95c87c9
 
     public static $classMap = array (
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
+        'Dompdf\\Cpdf' => __DIR__ . '/..' . '/dompdf/dompdf/lib/Cpdf.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
