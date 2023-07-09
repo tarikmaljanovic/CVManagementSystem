@@ -125,6 +125,7 @@ let userService = {
     });
   },
 
+
   logout: function () {
     localStorage.clear();
     window.location.replace("landing");
