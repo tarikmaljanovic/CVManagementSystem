@@ -2,19 +2,23 @@
 
 class Config {
     public static function DB_HOST(){
-      return '127.0.0.1';
+      return 'cv-management-system-do-user-14018578-0.b.db.ondigitalocean.com';
     }
 
     public static function DB_USERNAME(){
-      return 'root';
+      return 'doadmin';
     }
 
     public static function DB_PASSWORD(){
-      return 'stardust';
+      return 'AVNS_U_Sk0EySsyOz65j-Kds';
     }
 
     public static function DB_SCHEMA(){
       return 'cv_management';
+    }
+
+    public static function DB_PORT(){
+      return '25060';
     }
 
     public static function JWT_SECRET(){

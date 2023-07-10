@@ -7,14 +7,23 @@
 
     public function __construct($table_name) {
       try {
-        $servername = Config::DB_HOST();
-        $username = Config::DB_USERNAME();
-        $password = Config::DB_PASSWORD();
-        $schema = Config::DB_SCHEMA();
+        $db_info = array(
+          'host' => Config::DB_HOST(),
+          'port' => Config::DB_PORT(),
+          'name' => Config::DB_SCHEMA(),
+          'user' => Config::DB_USERNAME(),
+          'pass' => Config::DB_PASSWORD()
+          );
+
+          $options = array(
+            PDO::MYSQL_ATTR_SSL_CA => 'https://drive.google.com/file/d/13BMI_hGQ9Pi_T7Ygsavie6urZum6dX2a/view?usp=sharing',
+            PDO::MYSQL_ATTR_SSL_VERIFY_SERVER_CERT => false,
+  
+          );
 
         $this->table_name = $table_name;
 
-        $this->conn = new PDO ("mysql:host=$servername;dbname=$schema",$username, $password);
+        $this->conn = new PDO( 'mysql:host=' . $db_info['host'] . ';port=' . $db_info['port'] . ';dbname=' . $db_info['name'], $db_info['user'], $db_info['pass'], $options );
         
         $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
       } catch(PDOException $e) {
