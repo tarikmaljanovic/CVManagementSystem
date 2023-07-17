@@ -88,8 +88,9 @@ use Firebase\JWT\Key;
   $firstname = $data['firstname'];
   $lastname = $data['lastname'];
   $email = $data['email'];
+  $address = $data['address'];
 
-  Flight::userService()->updateProfile($id, $firstname, $lastname, $email);
+  Flight::userService()->updateProfile($id, $firstname, $lastname, $email, $address);
  });
 
 ?>

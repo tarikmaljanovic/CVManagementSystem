@@ -10,8 +10,8 @@
       return $this->query_unique("SELECT * FROM users WHERE email = :email ", ['email' => $email]);
     }
 
-    public function updateProfile($id, $firstname, $lastname, $email){
-      return $this->query("UPDATE users SET first_name = :firstname, last_name = :lastname, email = :email WHERE id = :id", ['email'=> $email, 'firstname'=>$firstname, 'lastname'=>$lastname, 'id'=>$id]);
+    public function updateProfile($id, $firstname, $lastname, $email, $address){
+      return $this->query("UPDATE users SET first_name = :firstname, last_name = :lastname, email = :email, adresa = :adresa WHERE id = :id", ['email'=> $email, 'firstname'=>$firstname, 'lastname'=>$lastname, 'id'=>$id, 'adresa' => $address]);
     }
   }
 ?>

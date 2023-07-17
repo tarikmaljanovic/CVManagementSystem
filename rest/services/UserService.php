@@ -11,8 +11,8 @@
       return $this->dao->getUserByEmail($email);
     }
 
-    public function updateProfile($id, $firstname, $lastname, $email) {
-      $this->dao->updateProfile($id, $firstname, $lastname, $email);
+    public function updateProfile($id, $firstname, $lastname, $email, $address) {
+      $this->dao->updateProfile($id, $firstname, $lastname, $email, $address);
     }
   }
 ?>

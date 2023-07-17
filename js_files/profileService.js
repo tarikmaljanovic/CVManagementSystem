@@ -6,12 +6,16 @@ let editProfile = {
         let firstname = $("#firstname").val();
         let lastname = $("#lastname").val();
         let email = $("#email").val();
+        let address = $("#address").val();
+
+        console.log(address)
   
         let data = {
           id: JSON.parse(localStorage.getItem('user')).id,
           firstname: firstname,
           lastname: lastname,
-          email: email
+          email: email,
+          address: address,
         };
   
         editProfile.updateProfile(data);
@@ -29,6 +33,7 @@ let editProfile = {
 
        $("#head-fullname").html(user.first_name + " " + user.last_name);
        $("#head-email").html(user.email);
+       $("#address").html(user.address);
 
     },
 
@@ -56,8 +61,8 @@ let editProfile = {
     },
 
     logout: function() {
-      localStorage.clear();
-      window.location.replace("landing");
+      // localStorage.clear();
+      // window.location.replace("landing");
     }
   }
   
